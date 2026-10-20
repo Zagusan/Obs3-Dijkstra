@@ -1,8 +1,6 @@
 // algorithm.js - EQUIPO 3: DIJKSTRA
 // SOLO este archivo debe ser modificado por el equipo.
 
-const { act } = require("react");
-
 function buscarRuta(escenario) {
   const inicio = buscarMarcador(escenario.matriz, 'S');
   const meta = buscarMarcador(escenario.matriz, 'G');
@@ -41,7 +39,7 @@ function buscarRuta(escenario) {
   procesados[inicio.f][inicio.c] = true;
   sinVisitar.push(inicio);
 
-  while (sinVisitar.length > 0) {
+  while (offsetSinVisitar < sinVisitar.length) {
     const actual = sinVisitar[offsetSinVisitar++];
     const costo_actual = costos[actual.f][actual.c];
 
@@ -91,14 +89,7 @@ function buscarRuta(escenario) {
         procesados[nuevo.f][nuevo.c] = true;
       }
     }
-
-    if (actual.f === meta.f && actual.c === meta.c)
-    {
-      break;
-    }
   }
-
-  // sinVisitar.splice(sinVisitar.findIndex((val) => escenario.matriz[val.f][val.c] === escenario.matriz[meta.f][meta.c]));
 
   // TODO 4: si meta tiene distancia finita, reconstruya y retorne la ruta.
   return { encontrado: costos[meta.f][meta.c] != Infinity, visitados: sinVisitar, camino: [], costo: costos[meta.f][meta.c]};
