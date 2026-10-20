@@ -2,7 +2,7 @@
 
 **Algoritmo:** Dijkstra - Camino de menor costo
 
-**Integrantes:** Julian Sanchez, Ricardo, Corredor, Santiago Pina
+**Integrantes:** Julián Sánchez, Ricardo Corredor, Santiago Piña
 
 ## A. Antes de programar
 
