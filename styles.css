@@ -1,0 +1,24 @@
+* { box-sizing: border-box; }
+body { font-family: Arial, Helvetica, sans-serif; margin: 0; background: #f5f7fb; color: #1f2937; }
+header { padding: 20px 24px; background: #111827; color: white; }
+header h1 { margin: 0 0 6px; font-size: 24px; }
+header p { margin: 0; opacity: .85; }
+main { max-width: 1100px; margin: 24px auto; padding: 0 20px 40px; }
+.panel { background: white; border-radius: 12px; padding: 18px; margin-bottom: 18px; box-shadow: 0 2px 8px rgba(0,0,0,.08); }
+.controls { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+button, select { padding: 9px 12px; font-size: 15px; }
+button { cursor: pointer; }
+#laberinto { display: grid; gap: 3px; justify-content: start; margin: 16px 0; }
+.celda { width: 43px; height: 43px; border: 1px solid #cbd5e1; display: flex; align-items: center; justify-content: center; font-weight: 700; background: white; transition: .15s; }
+.muro { background: #111827; color: white; }
+.inicio { background: #dcfce7; }
+.meta { background: #fee2e2; }
+.visitada { outline: 3px solid #f59e0b; background: #fef3c7; }
+.camino { outline: 3px solid #2563eb; background: #dbeafe; }
+.info-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px,1fr)); gap: 10px; }
+.kpi { padding: 10px; border: 1px solid #e5e7eb; border-radius: 8px; }
+.ok { color: #166534; font-weight: 700; }
+.error { color: #991b1b; font-weight: 700; }
+code, pre { background: #f3f4f6; border-radius: 6px; }
+pre { padding: 12px; overflow-x: auto; white-space: pre-wrap; }
+.small { font-size: 13px; color: #4b5563; }

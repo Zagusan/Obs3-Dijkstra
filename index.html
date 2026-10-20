@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dijkstra - Camino de menor costo</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+  <h1>Dijkstra - Camino de menor costo</h1>
+  <p>Unidad III - Programación para Inteligencia Artificial - CTP CIT</p>
+</header>
+<main>
+  <section class="panel">
+    <h2>Antes de programar</h2>
+    <p>Trabajen únicamente en <code>algorithm.js</code>. No modifiquen los archivos de escenarios ni las pruebas.</p>
+    <p>La función <code>buscarRuta(escenario)</code> debe retornar: <code>{ encontrado, visitados, camino, costo }</code>.</p>
+    <p>Lean <strong>README.md</strong> y completen <strong>RESPUESTAS.md</strong>.</p>
+  </section>
+  <section class="panel">
+    <div class="controls">
+      <label for="escenario"><strong>Escenario:</strong></label>
+      <select id="escenario"></select>
+      <button id="ejecutar">Ejecutar y animar</button>
+      <button id="reiniciar">Reiniciar vista</button>
+    </div>
+    <div id="descripcion"></div>
+    <div id="laberinto"></div>
+    <p class="small">Leyenda: <strong>S</strong> inicio, <strong>G</strong> meta, <strong>#</strong> muro. Los números representan costo de entrada cuando el escenario es ponderado.</p>
+  </section>
+  <section class="panel" id="salida"></section>
+</main>
+<script src="helpers.js"></script>
+<script src="scenarios.js"></script>
+<script src="algorithm.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
