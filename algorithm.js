@@ -7,7 +7,7 @@ function buscarRuta(escenario) {
   const vertices = listarVertices(escenario);
 
   const lon_x = escenario.matriz[0].length;
-  const lon_y = escenario.matriz.length
+  const lon_y = escenario.matriz.length;
 
   // "f" es y
   // "c" es x
@@ -23,6 +23,11 @@ function buscarRuta(escenario) {
   for (let i = 0; i < lon_y; i++)
   {
     costos.push(new Array(lon_x).fill(Infinity));
+  }
+  const caminos = new Array();
+  for (let i = 0; i < lon_y; i++)
+  {
+    caminos.push(new Array(lon_x).fill([inicio]));
   }
 
   costos[inicio.f][inicio.c] = 0;
@@ -72,7 +77,11 @@ function buscarRuta(escenario) {
       }
       const costo_nuevo = costos[actual.f][actual.c] + costo_adicional;
 
-      costos[nuevo.f][nuevo.c] = Math.min(costos[nuevo.f][nuevo.c], costo_nuevo);
+      if (costo_nuevo < costos[nuevo.f][nuevo.c])
+      {
+        costos[nuevo.f][nuevo.c] = costo_nuevo;
+        caminos[nuevo.f][nuevo.c] = [...caminos[actual.f][actual.c], nuevo];
+      }
 
       if (!procesados[nuevo.f][nuevo.c])
       {
@@ -92,5 +101,5 @@ function buscarRuta(escenario) {
   }
 
   // TODO 4: si meta tiene distancia finita, reconstruya y retorne la ruta.
-  return { encontrado: costos[meta.f][meta.c] != Infinity, visitados: sinVisitar, camino: [], costo: costos[meta.f][meta.c]};
+  return { encontrado: costos[meta.f][meta.c] != Infinity, visitados: sinVisitar, camino: caminos[meta.f][meta.c], costo: costos[meta.f][meta.c]};
 }
